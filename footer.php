@@ -13,9 +13,9 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'test-theme' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'test-theme' ), 'WordPress' ); ?></a>
+			&copy; 2015 <a href="http://tri.be">Modern Tribe Inc.</a>
 			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'test-theme' ), 'test-theme', '<a href="http://aliciahurst.com" rel="designer">Alicia Hurst</a>' ); ?>
+			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'test-theme' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'test-theme' ), 'WordPress' ); ?></a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
