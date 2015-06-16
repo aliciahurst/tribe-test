@@ -22,5 +22,22 @@
 
 <?php wp_footer(); ?>
 
+<script>
+// The jquery wasn't firing up for some reason! Can debug later, but for now I just put in vanilla JS instead! 
+
+var elem = document.querySelector('.grid');
+var msnry = new Masonry( elem, {
+  // options
+  itemSelector: '.grid-item',
+  columnWidth: 370
+});
+
+// element argument can be a selector string
+//   for an individual element
+var msnry = new Masonry( '.grid', {
+  // options
+});
+</script>
+
 </body>
 </html>
