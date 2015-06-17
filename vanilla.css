@@ -3,6 +3,9 @@
 */
 
 body {
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
 	background: #f2f1ef;
 	color: inherit;
 	line-height: 23px;
@@ -86,10 +89,18 @@ article {
 	font-weight: 500;
 }
 
+.entry-content {
+	margin-top: 0.5em;
+}
+
 .entry-content p {
 	color: #717171;
 	font-size: 16px;
-	font-weight: 300;
+	font-weight: 400;
+}
+
+.entry-content p:last-of-type {
+	margin-bottom: 0.5em;
 }
 
 .more-link {
@@ -122,5 +133,5 @@ article {
 	font-weight: 300;
 	font-size: 18px;
 	line-height: 28px;
-	font-weight: 300;
+	font-weight: 500;
 }
