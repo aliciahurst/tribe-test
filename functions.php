@@ -5,6 +5,8 @@
  * @package test-theme
  */
 
+// A lot of this is not needed in the trial theme, but I am leaving it in because it's standard Underscores and doesn't affect what I'm doing.
+
 if ( ! function_exists( 'test_theme_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -118,52 +120,55 @@ function test_theme_scripts() {
 
 	wp_enqueue_style( 'vanilla-style', get_template_directory_uri() . '/vanilla.css' ); // normally would be doing Sass but this is quick
 
-	wp_deregister_script('jquery');
-   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", array(), '', true);
-   wp_enqueue_script('jquery');
+	wp_deregister_script('jquery'); // load in google's jquery
+    wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", array(), '', true);
+    wp_enqueue_script('jquery');
 
-	wp_enqueue_script( 'test-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'test-theme-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20120206', true ); // standard packaged with underscores 
 
-	wp_enqueue_script( 'test-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'test-theme-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20130115', true ); // standard packaged with underscores
 
-	wp_enqueue_script( 'js-masonry', 'https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min.js', array(), '', true); // normally would self-host obviously but saw this option and considering it's a test project, thought I'd just fire it up
+	wp_enqueue_script( 'js-masonry', get_template_directory_uri() . '/assets/js/masonry.pkgd.min.js', array(), '', true); // Masonry
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_enqueue_script( 'infinite-scroll', get_template_directory_uri() . '/assets/js/jquery.infinitescroll.min.js', array(), '', true); // Infinite Scroll
+
+	// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+	//	wp_enqueue_script( 'comment-reply' ); // Don't need this for the trial project, usually would use Disqus and delete this anyway
+	// }
 }
 add_action( 'wp_enqueue_scripts', 'test_theme_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
+// Don't need any of the below for this project, but it's standard in Underscores so I usually just comment it out
+// /**
+//  * Implement the Custom Header feature.
+//  */
+// require get_template_directory() . '/inc/custom-header.php';
 
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
+// /**
+//  * Custom template tags for this theme.
+//  */
+// require get_template_directory() . '/inc/template-tags.php';
 
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
+// *
+//  * Custom functions that act independently of the theme templates.
+ 
+// require get_template_directory() . '/inc/extras.php';
 
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
+// /**
+//  * Customizer additions.
+//  */
+// require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
+// /**
+//  * Load Jetpack compatibility file.
+//  */
+// require get_template_directory() . '/inc/jetpack.php';
 
 
-// Remove admin bar for now, I do this on every project
+// Remove admin bar for now, I do this on every project, can be removed for production
 add_filter('show_admin_bar', '__return_false');
 
-// Custom read more link, default says continue reading
+// Custom read more link, default says "Continue Reading"
 add_filter( 'the_content_more_link', 'modify_read_more_link' );
 function modify_read_more_link() {
 return '<a class="more-link" href="' . get_permalink() . '">Read More</a>';
@@ -179,3 +184,9 @@ add_filter( 'style_loader_src', 'ewp_remove_script_version', 15, 1 );
 // Remove edit post link
 add_filter( 'edit_post_link', '__return_false' );
 
+// Add ID to page navivation for infinite scroll
+add_filter('next_posts_link_attributes', 'posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes');
+function posts_link_attributes() {
+    return 'id="next"';
+};
