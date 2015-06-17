@@ -5,13 +5,13 @@
 #colophon {
 	margin: 100px auto 50px;
 }
+
 #colophon, #colophon a {
 	text-align: center;
 	color: #3E4849;
-	font-weight: 300;
 	font-size: 18px;
 	line-height: 28px;
-	font-weight: 500;
+	font-weight: 400;
 	&:hover {
 		color: #000000;
 	}
@@ -21,27 +21,26 @@
 	position: relative;
 	max-width: 308px;
 	margin: 0 auto;
-}
-
-.footer-flourish:after {
-	position: absolute;
-	content: "";
-	top: 45%;
-	left: 0;
-	width: 100%;
-	height: 1px;
-	background-color: #607777;
-	opacity: 0.4;
-	z-index: -1;
-}
-
-.footer-flourish span {
-	background: #f2f1ef;
-	padding: 14px;
-	display: inline-block;
+	span {
+		background: #f2f1ef;
+		padding: 14px;
+		display: inline-block;	
+	}
+	&:after {
+		position: absolute;
+		content: "";
+		top: 45%;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: #607777;
+		opacity: 0.4;
+		z-index: -1;
+	}
 }
 
 @media all and (max-width: 37.5em) {
+	// The line break here was bad, so I removed the seperator once the layout broke
 	.sep {
 		display: none;
 	}

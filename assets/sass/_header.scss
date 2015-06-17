@@ -58,26 +58,17 @@
 	}
 }
 
-@media screen and (max-width: 71.8em) {
-	#masthead {
-		padding: 27px;
-	}
-	.site-title {
-		line-height: 56px; // would probably prefer to vertical align a different way
-	}
-}
-
 /* 
 * MOBILE NAV
 */
 
 button, %button {
 	background-color: #1ca8c7;
-	padding: 31px 48px 33px;
+	padding: 28px 48px 29px;
 	text-transform: uppercase;
 	color: #ffffff;
 	font-size: 18px;
-	font-weight: 700;
+	font-weight: 900;
 	line-height: 23px;
 	border-radius: 0;
 	box-shadow: none;
@@ -89,11 +80,70 @@ button, %button {
 }
 
 .slicknav_menutxt {
+	// I know extends are controvertial right now, so maybe I wouldn't use this in the future, have to re-research
 	@extend %button;
 	padding: 15px 24px 16px;
 }
 
-// This styling is commented out because it was using Underscores native navigation.js and such, but I switched to Slicknav
+.slicknav_menu {
+	display: none;
+}
+
+/* 
+* MEDIA QUERIES
+*/
+
+@media screen and (max-width: 71.8em) {
+
+	#masthead {
+		padding: 27px;
+	}
+	.site-title { 
+		// would probably prefer to vertical align a different way
+		line-height: 56px; 
+	}
+
+	/* Slicknav customization, a little hacky right now */
+
+	#menu {
+		display: none;
+	}
+	
+	.slicknav_menu {
+		display: block;
+	}
+
+	.slicknav_btn  {
+		float: right;
+		text-align: right;
+		display: block;
+	}
+
+	.slicknav_nav {
+		width: 100%;
+	}
+
+	.main-navigation {
+		width: 100%;
+		clear: none;
+		margin-top: -40px;
+		ul {
+			padding-top: 40px;
+		}
+	}
+
+	.main-navigation li {
+		float: none;
+		text-align: center;
+		padding: 20px 0;
+		a {
+			font-size: 18px;
+		}
+	}
+}
+
+// This styling is commented out because it was using Underscores native navigation.js and such, but I switched to Slicknav later in the development process
+
 // button span {
 // 	display: none;
 // }
@@ -122,48 +172,3 @@ button, %button {
 // 	line-height: 3;
 // 	border-bottom: 1px solid rgba(0,0,0,0.5);
 // }
-
-.slicknav_menu {
-	display:none;
-}
-
-@media screen and (max-width: 68em) {
-	/* Slicknav customization, a little hacky right now */
-	#menu {
-		display:none;
-	}
-	
-	.slicknav_menu {
-		display: block;
-		//float: right;
-	}
-
-	.slicknav_btn  {
-		float: right;
-		text-align: right;
-		display: block;
-	}
-
-	.slicknav_nav {
-		width: 100%;
-	}
-
-	.main-navigation {
-		width: 100%;
-		clear: none;
-		margin-top: -40px;
-		ul {
-			padding-top: 40px;
-		}
-	}
-
-	.main-navigation li {
-		float: none;
-		//width: 100%;
-		text-align: center;
-		padding: 20px 0;
-		a {
-			font-size: 18px;
-		}
-	}
-}

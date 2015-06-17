@@ -52,10 +52,9 @@ article {
 	color: #717171;
 	font-size: 16px;
 	font-weight: 400;
-}
-
-.entry-content p:last-of-type {
-	margin-bottom: 0.5em;
+	&:last-of-type {
+		margin-bottom: 0.5em;
+	}
 }
 
 .entry-thumbnail a {
@@ -85,8 +84,10 @@ article {
 
 @media all and (max-width:43.75em) {
 	.grid-item {
-		width: 100%;
+		width: 96%;
+		margin-left: 2%;
 	}
+	// sometimes a grid-item margin-bottom collapses and I don't know why
 }
 
 .nav-links {

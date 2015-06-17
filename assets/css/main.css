@@ -787,22 +787,16 @@ object {
     color: #949a96;
     color: rgba(74, 81, 76, 0.4); }
 
-@media screen and (max-width: 71.8em) {
-  #masthead {
-    padding: 27px; }
-
-  .site-title {
-    line-height: 56px; } }
 /* 
 * MOBILE NAV
 */
 button, .slicknav_menutxt, .nav-links a {
   background-color: #1ca8c7;
-  padding: 31px 48px 33px;
+  padding: 28px 48px 29px;
   text-transform: uppercase;
   color: #ffffff;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 23px;
   border-radius: 0;
   box-shadow: none;
@@ -817,7 +811,16 @@ button, .slicknav_menutxt, .nav-links a {
 .slicknav_menu {
   display: none; }
 
-@media screen and (max-width: 68em) {
+/* 
+* MEDIA QUERIES
+*/
+@media screen and (max-width: 71.8em) {
+  #masthead {
+    padding: 27px; }
+
+  .site-title {
+    line-height: 56px; }
+
   /* Slicknav customization, a little hacky right now */
   #menu {
     display: none; }
@@ -855,10 +858,9 @@ button, .slicknav_menutxt, .nav-links a {
 #colophon, #colophon a {
   text-align: center;
   color: #3E4849;
-  font-weight: 300;
   font-size: 18px;
   line-height: 28px;
-  font-weight: 500; }
+  font-weight: 400; }
   #colophon:hover, #colophon a:hover {
     color: #000000; }
 
@@ -866,22 +868,20 @@ button, .slicknav_menutxt, .nav-links a {
   position: relative;
   max-width: 308px;
   margin: 0 auto; }
-
-.footer-flourish:after {
-  position: absolute;
-  content: "";
-  top: 45%;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: #607777;
-  opacity: 0.4;
-  z-index: -1; }
-
-.footer-flourish span {
-  background: #f2f1ef;
-  padding: 14px;
-  display: inline-block; }
+  .footer-flourish span {
+    background: #f2f1ef;
+    padding: 14px;
+    display: inline-block; }
+  .footer-flourish:after {
+    position: absolute;
+    content: "";
+    top: 45%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #607777;
+    opacity: 0.4;
+    z-index: -1; }
 
 @media all and (max-width: 37.5em) {
   .sep {
@@ -933,9 +933,8 @@ article {
   color: #717171;
   font-size: 16px;
   font-weight: 400; }
-
-.entry-content p:last-of-type {
-  margin-bottom: 0.5em; }
+  .entry-content p:last-of-type {
+    margin-bottom: 0.5em; }
 
 .entry-thumbnail a:hover {
   opacity: 0.8; }
@@ -957,7 +956,8 @@ article {
 
 @media all and (max-width: 43.75em) {
   .grid-item {
-    width: 100%; } }
+    width: 96%;
+    margin-left: 2%; } }
 .nav-links {
   text-align: center;
   clear: both;
