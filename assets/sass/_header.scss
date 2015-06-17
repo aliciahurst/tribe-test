@@ -1,0 +1,105 @@
+/* 
+* HEADER
+*/
+
+#masthead {
+	background: #ffffff;
+	padding: 54px;
+	margin-bottom: 60px;
+	position: relative;
+}
+
+#masthead a {
+	font-weight: 700;
+}
+
+.site-branding {
+	float: left;
+}
+
+.site-title {
+	text-transform: uppercase;
+	font-size: 30px;
+	margin: 0;
+}
+
+.site-title a {
+	color: rgba(62, 72, 73, 0.8);
+}
+
+.main-navigation {
+	float: right;
+	text-align: right;
+	width: auto;
+	clear: none;
+}
+
+.menu-main-container, .nav-menu {
+	overflow: auto;
+}
+
+.main-navigation li {
+	padding: 0 27px;
+}
+
+.main-navigation a {
+	color: rgba(74, 81, 76, 0.8);
+	text-transform: uppercase;
+	font-size: 15px;
+	display: block;
+}
+
+@media screen and (max-width: 71.8em) {
+	#masthead {
+		padding: 27px;
+	}
+}
+
+/* 
+* MOBILE NAV
+*/
+
+button, #next a {
+	background-color: #1ca8c7;
+	padding: 31px 48px 33px;
+	text-transform: uppercase;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 23px;
+	border-radius: 0;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+button span {
+	display: none;
+}
+
+button:hover, #next a:hover {
+	background-color: #1ca8c7;
+	box-shadow: none;
+}
+
+button.menu-toggle {
+	padding: 15px 24px 16px;
+}
+
+.main-navigation.toggled {
+}
+
+.main-navigation.toggled ul {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	display: block;
+	z-index: 999;
+	width: 100%;
+	background-color: rgba(255,255,255,0.8);
+}
+
+.main-navigation.toggled ul li {
+	float: none;
+	line-height: 3;
+	border-bottom: 1px solid rgba(0,0,0,0.5);
+}

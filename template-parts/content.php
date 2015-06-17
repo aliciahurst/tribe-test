@@ -19,7 +19,7 @@
 	<div class="entry-wrapper">
 		<header class="entry-header">
 			<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-		</header><!-- .entry-header -->
+		</header>
 
 		<div class="entry-content">
 			<?php
@@ -36,6 +36,6 @@
 					'after'  => '</div>',
 					) );
 					?>
-		</div><!-- .entry-content -->
+		</div>
 	</div>
-</article><!-- #post-## -->
+</article>

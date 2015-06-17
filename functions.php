@@ -116,9 +116,9 @@ add_action( 'widgets_init', 'test_theme_widgets_init' );
 function test_theme_scripts() {
 	wp_enqueue_style('google-fonts', 'http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
 
-	wp_enqueue_style( 'test-theme-style', get_stylesheet_uri() );
+	//wp_enqueue_style( 'test-theme-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'vanilla-style', get_template_directory_uri() . '/vanilla.css' ); // normally would be doing Sass but this is quick
+	wp_enqueue_style( 'test-theme-styles', get_template_directory_uri() . '/assets/css/main.css' ); // normally would be doing Sass but this is quick
 
 	wp_deregister_script('jquery'); // load in google's jquery
     wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", array(), '', true);
