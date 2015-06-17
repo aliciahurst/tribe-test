@@ -12,6 +12,9 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="footer-flourish">
+			<span><img src="wp-content/themes/test-theme/assets/flourish@2x.png" height="32px" width="43px" /></span>
+		</div>
 		<div class="site-info">
 			&copy; 2015 <a href="http://tri.be">Modern Tribe Inc.</a>
 			<span class="sep"> | </span>
