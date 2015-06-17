@@ -118,6 +118,10 @@ function test_theme_scripts() {
 
 	wp_enqueue_style( 'vanilla-style', get_template_directory_uri() . '/vanilla.css' ); // normally would be doing Sass but this is quick
 
+	wp_deregister_script('jquery');
+   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", array(), '', true);
+   wp_enqueue_script('jquery');
+
 	wp_enqueue_script( 'test-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'test-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
@@ -174,3 +178,4 @@ add_filter( 'style_loader_src', 'ewp_remove_script_version', 15, 1 );
 
 // Remove edit post link
 add_filter( 'edit_post_link', '__return_false' );
+
