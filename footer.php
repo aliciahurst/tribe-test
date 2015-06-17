@@ -18,7 +18,7 @@
 		<div class="site-info">
 			&copy; 2015 <a href="http://tri.be">Modern Tribe Inc.</a>
 			<span class="sep"> | </span>
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'test-theme' ) ); ?>"><?php printf( esc_html__( 'Proudly Powered by %s', 'test-theme' ), 'WordPress' ); ?></a>
+			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'test-theme' ) ); ?>" class="wp-link"><?php printf( esc_html__( 'Proudly powered by %s', 'test-theme' ), 'WordPress' ); ?></a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
@@ -32,9 +32,11 @@
     $('.grid').masonry({
       itemSelector: '.grid-item',
       columnWidth: 100,
-      gutterWidth: 40
+      gutterWidth: 30,
+      isAnimated: true,
+      isFitWidth: true,
     });
-    
+
   });
 
 </script>

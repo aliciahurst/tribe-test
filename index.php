@@ -33,8 +33,6 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php the_posts_navigation(); ?>
-
 		<?php else : ?>
 
 			<?php get_template_part( 'template-parts/content', 'none' ); ?>
@@ -42,6 +40,9 @@ get_header(); ?>
 		<?php endif; ?>
 
 		</main><!-- #main -->
+		<div class="navlinks">
+		<?php the_posts_navigation(); ?>
+		</div>
 	</div><!-- #primary -->
 
 <?php get_footer(); ?>

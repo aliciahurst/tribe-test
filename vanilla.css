@@ -67,6 +67,12 @@ a {
 	display: block;
 }
 
+@media screen and (max-width: 71.8em) {
+	#masthead {
+		padding: 27px;
+	}
+}
+
 /* 
 * MOBILE NAV
 */
@@ -160,8 +166,13 @@ article {
 
 .grid-item { 
 	width: 370px; 
-	/*margin-left: 30px;*/
 	margin-bottom: 30px;
+}
+
+@media all and (max-width:43.75em) {
+	.grid-item {
+		width: 100%;
+	}
 }
 
 /* 
@@ -169,8 +180,8 @@ article {
 */
 
 #colophon {
-	margin: 0 auto 50px;
-	padding-top: 100px;
+	margin: 100px auto 50px;
+	/*padding-top: 100px;*/
 }
 #colophon, #colophon a {
 	text-align: center;
@@ -203,4 +214,13 @@ article {
 	background: #f2f1ef;
 	padding: 14px;
 	display: inline-block;
+}
+
+@media all and (max-width: 37.5em) {
+	.sep {
+		display: none;
+	}
+	.wp-link {
+		display: block;
+	}
 }
