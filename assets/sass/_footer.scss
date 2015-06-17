@@ -4,7 +4,6 @@
 
 #colophon {
 	margin: 100px auto 50px;
-	/*padding-top: 100px;*/
 }
 #colophon, #colophon a {
 	text-align: center;
@@ -13,6 +12,9 @@
 	font-size: 18px;
 	line-height: 28px;
 	font-weight: 500;
+	&:hover {
+		color: #000000;
+	}
 }
 
 .footer-flourish {

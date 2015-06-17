@@ -25,6 +25,9 @@
 
 .site-title a {
 	color: rgba(62, 72, 73, 0.8);
+	&:hover {
+		color: #000000;
+	}
 }
 
 .main-navigation {
@@ -47,11 +50,17 @@
 	text-transform: uppercase;
 	font-size: 15px;
 	display: block;
+	&:hover {
+		color: rgba(74, 81, 76, 0.4);
+	}
 }
 
 @media screen and (max-width: 71.8em) {
 	#masthead {
 		padding: 27px;
+	}
+	.site-title {
+		line-height: 56px; // would probably prefer to vertical align a different way
 	}
 }
 
@@ -59,7 +68,7 @@
 * MOBILE NAV
 */
 
-button, #next a {
+button, %button {
 	background-color: #1ca8c7;
 	padding: 31px 48px 33px;
 	text-transform: uppercase;
@@ -70,36 +79,87 @@ button, #next a {
 	border-radius: 0;
 	box-shadow: none;
 	text-shadow: none;
+	&:hover {
+		background-color: darken(#1ca8c7,15);
+		box-shadow: none;
+	}
 }
 
-button span {
-	display: none;
-}
-
-button:hover, #next a:hover {
-	background-color: #1ca8c7;
-	box-shadow: none;
-}
-
-button.menu-toggle {
+.slicknav_menutxt {
+	@extend %button;
 	padding: 15px 24px 16px;
 }
 
-.main-navigation.toggled {
+// button span {
+// 	display: none;
+// }
+
+// button.menu-toggle {
+// 	padding: 15px 24px 16px;
+// }
+
+// .main-navigation.toggled {
+// 	 -webkit-animation: fadeIn 1s;
+//     animation: fadeIn 1s;
+// }
+
+// .main-navigation.toggled ul {
+// 	position: absolute;
+// 	top: 100%;
+// 	left: 0;
+// 	display: block;
+// 	z-index: 999;
+// 	width: 100%;
+// 	background-color: rgba(255,255,255,0.8);
+// }
+
+// .main-navigation.toggled ul li {
+// 	float: none;
+// 	line-height: 3;
+// 	border-bottom: 1px solid rgba(0,0,0,0.5);
+// }
+
+.slicknav_menu {
+	display:none;
 }
 
-.main-navigation.toggled ul {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	display: block;
-	z-index: 999;
-	width: 100%;
-	background-color: rgba(255,255,255,0.8);
-}
+@media screen and (max-width: 1100px) {
+	/* #menu is the original menu */
+	#menu {
+		display:none;
+	}
+	
+	.slicknav_menu {
+		display: block;
+		//float: right;
+	}
 
-.main-navigation.toggled ul li {
-	float: none;
-	line-height: 3;
-	border-bottom: 1px solid rgba(0,0,0,0.5);
+	.slicknav_btn  {
+		float: right;
+		text-align: right;
+		display: block;
+	}
+
+	.slicknav_nav {
+		width: 100%;
+	}
+
+	.main-navigation {
+		width: 100%;
+		clear: none;
+		margin-top: -40px;
+		ul {
+			padding-top: 40px;
+		}
+	}
+
+	.main-navigation li {
+		float: none;
+		//width: 100%;
+		text-align: center;
+		padding: 20px 0;
+		a {
+			font-size: 18px;
+		}
+	}
 }

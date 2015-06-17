@@ -26,8 +26,13 @@
 <?php wp_footer(); ?>
 
 <script>
+
   $(function(){
-    
+    $('#menu').slicknav({
+    prependTo:'#site-navigation',
+    label: '&#9776;'
+  });
+
     var $container = $('#main');
     
     $('.grid').masonry({

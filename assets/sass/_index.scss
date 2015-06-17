@@ -15,6 +15,12 @@ body {
 a {
 	text-decoration: none;
 	font-weight: 700;
+	// Normally I use a Sass mixin here
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
 
 article {
@@ -33,6 +39,9 @@ article {
 	font-size: 24px;
 	color: #3e4849;
 	font-weight: 500;
+	&:hover {
+		color: lighten(#3e4849, 15);
+	}
 }
 
 .entry-content {
@@ -49,9 +58,18 @@ article {
 	margin-bottom: 0.5em;
 }
 
+.entry-thumbnail a {
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
 .more-link {
 	color: #21a6cb;
 	font-weight: 500;
+	&:hover {
+		color: darken(#21a6cb, 15);
+	}
 }
 
 .grid {
@@ -75,4 +93,7 @@ article {
 	text-align: center;
 	clear: both;
 	margin-top: 85px;
+	a {
+		@extend %button;
+	}
 }
