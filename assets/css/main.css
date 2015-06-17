@@ -760,6 +760,7 @@ object {
   margin: 0; }
 
 .site-title a {
+  color: #656D6D;
   color: rgba(62, 72, 73, 0.8); }
   .site-title a:hover {
     color: #000000; }
@@ -777,11 +778,13 @@ object {
   padding: 0 27px; }
 
 .main-navigation a {
+  color: #6E7470;
   color: rgba(74, 81, 76, 0.8);
   text-transform: uppercase;
   font-size: 15px;
   display: block; }
   .main-navigation a:hover {
+    color: #949a96;
     color: rgba(74, 81, 76, 0.4); }
 
 @media screen and (max-width: 71.8em) {
@@ -814,8 +817,8 @@ button, .slicknav_menutxt, .nav-links a {
 .slicknav_menu {
   display: none; }
 
-@media screen and (max-width: 1100px) {
-  /* #menu is the original menu */
+@media screen and (max-width: 68em) {
+  /* Slicknav customization, a little hacky right now */
   #menu {
     display: none; }
 
@@ -851,7 +854,7 @@ button, .slicknav_menutxt, .nav-links a {
 
 #colophon, #colophon a {
   text-align: center;
-  color: #3e4849;
+  color: #3E4849;
   font-weight: 300;
   font-size: 18px;
   line-height: 28px;
